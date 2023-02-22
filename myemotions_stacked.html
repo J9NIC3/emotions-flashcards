@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<head>
+  <title>My Emotions Flashcards</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    
+    @font-face{
+      font-family: myFirstFont;
+      src:url(project2/DkCoolCrayon-xJyV.ttf);
+      
+    }
+    body {
+      /*font-family: Arial, Helvetica, sans-serif;*/
+      
+      background-color:peachpuff;
+      font-family:myFirstFont;
+    }
+    
+    h1{
+      color:tomato;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 350px;
+      height: 300px;
+      perspective: 1000px;
+      border-radius: 10%;
+
+    }
+
+    .flip-card-inner {
+      background-color: white;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      border-style: solid;
+      border-color: lightblue;
+      border-width: 8px;
+      border-radius: 10%;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 8%;
+    }
+
+    .flip-card-front {
+      border-color: black;
+      border-width: 5px;
+
+    }
+
+    .flip-card-back {
+      background-color: rgba(255, 192, 203, 0.897);
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .btn {
+      margin: auto;
+      position: relative;
+    }
+
+    .box {
+      width: 90%;
+      height: 380px;
+      margin: auto;
+      position: relative;
+    }
+
+    .card1 {
+      z-index: 6;
+      position: absolute;
+      /*top: 20px;*/
+      left: -30px;
+    
+    }
+
+    .card2 {
+      z-index: 5;
+      position: absolute;
+      /*top: 30px;*/
+      left: 130px;
+      border-style: solid;
+      border-color: lightblue;
+      background-color: white;
+      border-width: 8px;
+    }
+
+    .card3 {
+      z-index: 4;
+      position: absolute;
+      /*top: 20px;*/
+      left: 280px;
+      border-style: solid;
+      border-color: lightblue;
+      background-color: white;
+      border-width: 8px;
+    }
+
+    .card4 {
+      z-index: 3;
+      position: absolute;
+      /*top: 30px;*/
+      left: 460px;
+      border-style: solid;
+      border-color: lightblue;
+      background-color: white;
+      border-width: 8px;
+    }
+
+    .card5 {
+      z-index: 2;
+      position: absolute;
+      /*top: 20px;*/
+      left: 640px;
+      border-style: solid;
+      border-color: lightblue;
+      background-color: white;
+      border-width: 8px;
+    }
+
+    .card6 {
+      z-index: 1;
+      position: absolute;
+      /*top: 20px;*/
+      left: 820px;
+      border-style: solid;
+      border-color: lightblue;
+      background-color: white;
+      border-width: 8px;
+    }
+  </style>
+
+  <script>
+    function next() {
+      var topImage = document.getElementById("top").getAttribute("src"); // Get the name of the image on top
+      
+      if (topImage == "project2/sad.png") {
+
+        document.getElementById("top").setAttribute("src", "project2/shocked.png"); // Move the second image to top
+        document.getElementById("top_text").innerHTML = "<br><br><br><br> <h2>I am</h2> <h1>SHOCKED</h1>"; // Update the text on reverse
+
+        document.getElementById("second").setAttribute("src", "project2/Sleepy.png"); // Move the third image to second
+
+        document.getElementById("third").setAttribute("src", "project2/angry.png");
+        document.getElementById("fourth").setAttribute("src", "project2/confused.png"); 
+        document.getElementById("fifth").setAttribute("src", "project2/happy.png"); 
+        document.getElementById("sixth").setAttribute("src", "project2/sad.png"); 
+      }
+      else if (topImage == "project2/shocked.png") {
+        document.getElementById("top").setAttribute("src", "project2/Sleepy.png");
+        document.getElementById("top_text").innerHTML = "<br><br><br><br> <h2>I am</h2> <h1>SLEEPY</h1>";
+
+        document.getElementById("second").setAttribute("src", "project2/angry.png");
+
+        document.getElementById("third").setAttribute("src", "project2/confused.png");
+        document.getElementById("fourth").setAttribute("src", "project2/happy.png"); 
+        document.getElementById("fifth").setAttribute("src", "project2/sad.png"); 
+        document.getElementById("sixth").setAttribute("src", "project2/shocked.png"); 
+      }
+      else if (topImage == "project2/Sleepy.png") {
+        document.getElementById("top").setAttribute("src", "project2/angry.png");
+        document.getElementById("top_text").innerHTML = "<br><br><br><br> <h2>I am</h2> <h1>ANGRY</h1>";
+
+        document.getElementById("second").setAttribute("src", "project2/confused.png");
+
+        document.getElementById("third").setAttribute("src", "project2/happy.png");
+        document.getElementById("fourth").setAttribute("src", "project2/sad.png"); 
+        document.getElementById("fifth").setAttribute("src", "project2/shocked.png"); 
+        document.getElementById("sixth").setAttribute("src", "project2/Sleepy.png"); 
+      }
+      else if (topImage == "project2/angry.png") {
+        document.getElementById("top").setAttribute("src", "project2/confused.png");
+        document.getElementById("top_text").innerHTML = "<br><br><br><br> <h2>I am</h2> <h1>CONFUSED</h1>";
+
+        document.getElementById("second").setAttribute("src", "project2/happy.png");
+
+        document.getElementById("third").setAttribute("src", "project2/sad.png");
+        document.getElementById("fourth").setAttribute("src", "project2/shocked.png"); 
+        document.getElementById("fifth").setAttribute("src", "project2/Sleepy.png"); 
+        document.getElementById("sixth").setAttribute("src", "project2/angry.png"); 
+       }
+       else if (topImage == "project2/confused.png") {
+       
+        document.getElementById("top").setAttribute("src", "project2/happy.png");
+        document.getElementById("top_text").innerHTML = "<br><br><br><br> <h2>I am</h2> <h1>HAPPY</h1>";
+
+        document.getElementById("second").setAttribute("src", "project2/sad.png");
+
+        document.getElementById("third").setAttribute("src", "project2/shocked.png");
+        document.getElementById("fourth").setAttribute("src", "project2/Sleepy.png"); 
+        document.getElementById("fifth").setAttribute("src", "project2/angry.png"); 
+        document.getElementById("sixth").setAttribute("src", "project2/confused.png"); 
+       }
+       else if (topImage == "project2/happy.png") {
+        document.getElementById("top").setAttribute("src", "project2/sad.png");
+        document.getElementById("top_text").innerHTML = "<br><br><br><br> <h2>I am</h2> <h1>SAD</h1>";
+
+        document.getElementById("second").setAttribute("src", "project2/shocked.png");
+
+        document.getElementById("third").setAttribute("src", "project2/Sleepy.png");
+        document.getElementById("fourth").setAttribute("src", "project2/angry.png"); 
+        document.getElementById("fifth").setAttribute("src", "project2/confused.png"); 
+        document.getElementById("sixth").setAttribute("src", "project2/happy.png"); 
+       }
+    }
+
+    function playAudio()
+    {
+      var topImage = document.getElementById("top").getAttribute("src"); 
+
+      if (topImage == "project2/sad.png") {
+        playAudiocry();
+      }
+      if (topImage == "project2/shocked.png") {
+        playAudioshocked();
+      }
+      if (topImage == "project2/happy.png") {
+        playAudiohappy();
+      }
+      if (topImage == "project2/angry.png") {
+        playAudioangry();
+      }
+      if (topImage == "project2/confused.png") {
+        playAudioconfused();
+      }
+      if (topImage == "project2/Sleepy.png") {
+        playAudiosleepy();
+      }
+    }
+    function playAudiocry()
+    {
+      var a=document.getElementById("cry");
+      a.play();
+    }
+    function playAudiohappy()
+    {
+      var b=document.getElementById("happy");
+      b.play();
+    }
+    function playAudioshocked()
+    {
+      var c=document.getElementById("shocked");
+      c.play();
+    }
+    function playAudioangry()
+    {
+      var d=document.getElementById("angry");
+      d.play();
+    }
+    function playAudioconfused()
+    {
+      var e=document.getElementById("confused");
+      e.play();
+    }
+    function playAudiosleepy()
+    {
+      var f=document.getElementById("sleepy");
+      f.play();
+    }
+  </script>
+</head>
+
+<body>
+  <audio id="cry">
+    <source src="project2/cry-[AudioTrimmer.com].mp3"  type="audio/mp3">
+  </audio>
+  <audio id="shocked">
+    <source src="project2/loud-female-scream-41894-[AudioTrimmer.com].mp3"  type="audio/mp3">
+  </audio>
+  <audio id="happy">
+    <source src="project2/laughter-29686-[AudioTrimmer.com].mp3"  type="audio/mp3">
+  </audio>
+  <audio id="angry">
+    <source src="project2/uuuurrrgh-104596.mp3"  type="audio/mp3">
+  </audio>
+  <audio id="sleepy">
+    <source src="project2/yawn-47107-[AudioTrimmer.com].mp3"  type="audio/mp3">
+  </audio>
+  <audio id="confused">
+    <source src="project2/huh-88084.mp3"  type="audio/mp3">
+  </audio>
+  <center>
+    <br><br><br><br>
+    <h1>My Emotions Flashcards</h1>
+    <h6>For Educational Purpose</h6>
+  </center>
+<br>
+  <div class="box">
+  
+    <div class="flip-card card1" >
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="project2/sad.png" alt="Avatar" height="100%" width="100%" id="top">
+        </div>
+        <div class="flip-card-back" id="top_text" onmouseover="playAudio()">
+          <br><br><br><br>
+          <h2>I am</h2>
+          <h1>SAD</h1>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="flip-card card2">
+      <img src="project2/shocked.png" height="100%" width="100%" id="second">
+    </div>
+
+    <div class="flip-card card3">
+      <img src="project2/Sleepy.png" height="100%" width="100%" id="third">
+    </div>
+    <div class="flip-card card4">
+      <img src="project2/angry.png" height="100%" width="100%" id="fourth">
+    </div>
+
+    <div class="flip-card card5">
+      <img src="project2/confused.png" height="100%" width="100%" id="fifth">
+    </div>
+    <div class="flip-card card6">
+      <img src="project2/happy.png" height="100%" width="100%" id="sixth">
+    </div>
+  </div>
+
+  <center><button type="button" onclick="next()">Next</button></center>
+  <br>
+&copy;Shi Jin, Sue-Ann, WenXin, Eugenia
+</body>
